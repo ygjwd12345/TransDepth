@@ -1,0 +1,33 @@
+--mode train
+--model_name bts_nyu_v2_pytorch_att
+--encoder resnet101_bts
+--dataset nyu
+--data_path ./dataset/nyu_depth_v2/sync/
+--gt_path ./dataset/nyu_depth_v2/sync/
+--filenames_file ../train_test_inputs/nyudepthv2_train_files_with_gt.txt
+--batch_size 1
+--num_epochs 50
+--learning_rate 1e-4
+--weight_decay 1e-2
+--adam_eps 1e-3
+--num_threads 1
+--input_height 416
+--input_width 512
+--max_depth 10
+--do_random_rotate
+--degree 2.5
+--log_directory ./models
+--multiprocessing_distributed
+--dist_url tcp://127.0.0.1:2346
+--att_rank 3
+
+--log_freq 10
+--do_online_eval
+--eval_freq 10
+--data_path_eval ./dataset/nyu_depth_v2/official_splits/test/
+--gt_path_eval ./dataset/nyu_depth_v2/official_splits/test/
+--filenames_file_eval ../train_test_inputs/nyudepthv2_test_files_with_gt.txt
+--min_depth_eval 1e-3
+--max_depth_eval 10
+--eval_summary_directory ./models/eval/
+--eigen_crop

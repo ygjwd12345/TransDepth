@@ -1,0 +1,10 @@
+--encoder resnet101_bts
+--data_path ./dataset/nyu_depth_v2/official_splits/test/
+--dataset nyu
+--filenames_file ../train_test_inputs/nyudepthv2_test_files_with_gt.txt
+--model_name  bts_nyu_v2_pytorch_att
+--checkpoint_path ./models/bts_nyu_v2_pytorch_att_rank_3/model-10-best_abs_rel_1.21895
+--input_height 480
+--input_width 640
+--max_depth 10
+--att_rank 5
