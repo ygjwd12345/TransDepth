@@ -1,4 +1,4 @@
-Official Code for "Transformers Solve Limited Receptive Field for Monocular Depth Prediction". Apply Transformer into depth predciton.
+Official Code for [Transformers Solve Limited Receptive Field for Monocular Depth Prediction](https://arxiv.org/abs/2103.12091). Apply Transformer into depth predciton and surface normal estimation.
 
 ## Prepare pretrain model
 we choose R50-ViT-B_16 as our encoder.
@@ -63,7 +63,7 @@ Debug
 CUDA_VISIBLE_DEVICES=1 python bts_main.py arguments_train_nyu_debug.txt
 ```
 # Reference
-[Bts](https://github.com/cogaplex-bts/bts)
+[BTS](https://github.com/cogaplex-bts/bts)
 
 [ViT](https://github.com/jeonsworld/ViT-pytorch)
 
