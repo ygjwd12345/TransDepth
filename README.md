@@ -3,9 +3,9 @@ Official PyTorch code for [Transformers Solve Limited Receptive Field for Monocu
 ## Prepare pretrain model
 we choose R50-ViT-B_16 as our encoder.
 ```bash root transformerdepth
-wget https://storage.googleapis.com/vit_models/imagenet21k/R50-ViT-B_16.npz 
+wget https://storage.googleapis.com/vit_models/imagenet21k/R50+ViT-B_16.npz 
 mkdir ./model/vit_checkpoint/imagenet21k 
-mv R50-ViT-B_16.npz ./model/vit_checkpoint/imagenet21k/R50-ViT-B_16.npz
+mv R50+ViT-B_16.npz ./model/vit_checkpoint/imagenet21k/R50+ViT-B_16.npz
 ```
 
 ## Prepare Dateset
