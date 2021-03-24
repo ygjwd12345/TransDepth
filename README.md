@@ -1,4 +1,4 @@
-Official Code for "Transformers Solve Limited Receptive Field for Monocular Depth Prediction". Apply Transformer into Depth predciton.
+Official Code for "Transformers Solve Limited Receptive Field for Monocular Depth Prediction". Apply Transformer into depth predciton.
 
 ## Prepare pretrain model
 we choose R50-ViT-B_16 as our encoder.
