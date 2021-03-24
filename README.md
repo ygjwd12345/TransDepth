@@ -1,4 +1,4 @@
-Official Code for [Transformers Solve Limited Receptive Field for Monocular Depth Prediction](https://arxiv.org/abs/2103.12091). Apply Transformer into depth predciton and surface normal estimation.
+Official PyTorch code for [Transformers Solve Limited Receptive Field for Monocular Depth Prediction](https://arxiv.org/abs/2103.12091). Apply Transformer into depth predciton and surface normal estimation.
 
 ## Prepare pretrain model
 we choose R50-ViT-B_16 as our encoder.
