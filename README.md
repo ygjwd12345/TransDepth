@@ -11,12 +11,9 @@ mv R50+ViT-B_16.npz ./model/vit_checkpoint/imagenet21k/R50+ViT-B_16.npz
 ## Prepare Dateset
 ### prepare nyu
 ```bash
-cd ./pytorch
-mkdir dataset
-mkdir dataset/nyu_depth_v2
-python ../utils/download_from_gdrive.py 1AysroWpfISmm-yRFGBgFTrLy6FjQwvwP ./dataset/nyu_depth_v2/sync.zip
-cd dataset
-cd nyu_depth_v2
+mkdir -p pytorch/dataset/nyu_depth_v2
+python utils/download_from_gdrive.py 1AysroWpfISmm-yRFGBgFTrLy6FjQwvwP pytorch/dataset/nyu_depth_v2/sync.zip
+cd pytorch/dataset/nyu_depth_v2
 unzip sync.zip
 ```
 ### prepare kitti
