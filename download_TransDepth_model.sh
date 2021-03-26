@@ -1,6 +1,6 @@
 FILE=$1
 
-echo "Note: available models are nyu and kitti"
+echo "Note: available models are kitti_depth, nyu_depth, and nyu_surfacenormal"
 echo "Specified [$FILE]"
 
 URL=http://disi.unitn.it/~hao.tang/uploads/models/TransDepth/${FILE}_pretrained.tar.gz
