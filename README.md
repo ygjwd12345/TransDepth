@@ -59,6 +59,18 @@ Debug
 ```bash
 CUDA_VISIBLE_DEVICES=1 python bts_main.py arguments_train_nyu_debug.txt
 ```
+
+## Download Pretrained Model
+
+```bash
+sh scripts/download_TransDepth_model.sh kitti_depth
+
+sh scripts/download_TransDepth_model.sh nyu_depth
+
+sh scripts/download_TransDepth_model.sh nyu_surfacenormal
+```
+
+
 # Reference
 [BTS](https://github.com/cogaplex-bts/bts)
 
