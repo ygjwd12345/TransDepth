@@ -29,16 +29,13 @@ wget -i kitti_archives_to_download.txt
 
 ### label
 wget https://s3.eu-central-1.amazonaws.com/avg-kitti/data_depth_annotated.zip
+unzip "*.zip"
 unzip data_depth_annotated.zip
-cd train
-mv * ../
-cd ..  
+mv train/* ./
+mv val/* ./
 rm -r train
-cd val
-mv * ../
-cd ..
 rm -r val
-rm data_depth_annotated.zip
+rm *.zip
 ```
 ## Environment 
 ```bash
