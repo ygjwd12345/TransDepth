@@ -20,6 +20,7 @@ unzip sync.zip
 ```
 ### prepare kitti
 ```bash
+cd pytorch
 cd dataset
 mkdir kitti_dataset
 cd kitti_dataset
