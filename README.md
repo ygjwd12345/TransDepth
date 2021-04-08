@@ -72,6 +72,8 @@ sh scripts/download_TransDepth_model.sh nyu_depth
 sh scripts/download_TransDepth_model.sh nyu_surfacenormal
 ```
 
+Note: Please try to execute the command line a second time, if it doesn’t work the first time.
+
 
 # Reference
 [BTS](https://github.com/cogaplex-bts/bts)
