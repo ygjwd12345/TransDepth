@@ -17,7 +17,7 @@
 import time
 import argparse
 import datetime
-import sys
+import sys, shutil
 import os
 
 import torch
@@ -434,11 +434,11 @@ def main_worker(gpu, ngpus_per_node, args):
     num_log_images = args.batch_size
     end_learning_rate = args.end_learning_rate if args.end_learning_rate != -1 else 0.1 * args.learning_rate
 
-    var_sum = [var.sum() for var in model.parameters() if var.requires_grad]
-    var_cnt = len(var_sum)
-    var_sum = np.sum(var_sum)
+    # var_sum = [var.sum().detach().numpy() for var in model.parameters() if var.requires_grad]
+    # var_cnt = len(var_sum)
+    # var_sum = np.sum(var_sum)
 
-    print("Initial variables' sum: {:.3f}, avg: {:.3f}".format(var_sum, var_sum/var_cnt))
+    # print("Initial variables' sum: {:.3f}, avg: {:.3f}".format(var_sum, var_sum/var_cnt))
 
     steps_per_epoch = len(dataloader.data)
     num_total_steps = args.num_epochs * steps_per_epoch
@@ -481,7 +481,7 @@ def main_worker(gpu, ngpus_per_node, args):
             if global_step and global_step % args.log_freq == 0 and not model_just_loaded:
                 var_sum = [var.sum() for var in model.parameters() if var.requires_grad]
                 var_cnt = len(var_sum)
-                var_sum = np.sum(var_sum)
+                var_sum = torch.sum(var_sum)
                 examples_per_sec = args.batch_size / duration * args.log_freq
                 duration = 0
                 time_sofar = (time.time() - start_time) / 3600
@@ -570,30 +570,36 @@ def main():
 
     model_filename = args.model_name + '.py'
     args.model_name=args.model_name + '_rank_'+str(args.att_rank)
-    command = 'mkdir ' + args.log_directory + '/' + args.model_name
-    os.system(command)
+    # command = 'mkdir ' + args.log_directory + '/' + args.model_name
+    # os.system(command)
+    os.makedirs(args.log_directory + '/' + args.model_name, exist_ok=True)
 
     args_out_path = args.log_directory + '/' + args.model_name + '/' + sys.argv[1]
-    command = 'cp ' + sys.argv[1] + ' ' + args_out_path
-    os.system(command)
+    # command = 'cp ' + sys.argv[1] + ' ' + args_out_path
+    # os.system(command)
+    shutil.copyfile(sys.argv[1], args_out_path)
 
     if args.checkpoint_path == '':
         model_out_path = args.log_directory + '/' + args.model_name + '/' + model_filename
-        command = 'cp bts.py ' + model_out_path
-        os.system(command)
+        # command = 'cp bts.py ' + model_out_path
+        # os.system(command)
+        shutil.copyfile('bts.py',model_out_path )
         aux_out_path = args.log_directory + '/' + args.model_name + '/.'
-        command = 'cp bts_main.py ' + aux_out_path
-        os.system(command)
-        command = 'cp bts_dataloader.py ' + aux_out_path
-        os.system(command)
+        # command = 'cp bts_main.py ' + aux_out_path
+        # os.system(command)
+        shutil.copyfile('bts_main.py',os.path.join(aux_out_path, 'bts_main.py'))
+        # command = 'cp bts_dataloader.py ' + aux_out_path
+        # os.system(command)
+        shutil.copyfile('bts_dataloader.py',os.path.join(aux_out_path, 'bts_dataloader.py'))
     else:
         loaded_model_dir = os.path.dirname(args.checkpoint_path)
         loaded_model_name = os.path.basename(loaded_model_dir)
         loaded_model_filename = loaded_model_name + '.py'
 
         model_out_path = args.log_directory + '/' + args.model_name + '/' + model_filename
-        command = 'cp ' + loaded_model_dir + '/' + loaded_model_filename + ' ' + model_out_path
-        os.system(command)
+        # command = 'cp ' + loaded_model_dir + '/' + loaded_model_filename + ' ' + model_out_path
+        # os.system(command)
+        shutil.copyfile(loaded_model_dir + '/' + loaded_model_filename, model_out_path)
 
     torch.cuda.empty_cache()
     args.distributed = args.world_size > 1 or args.multiprocessing_distributed
