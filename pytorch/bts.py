@@ -351,5 +351,5 @@ class BtsModel(nn.Module):
         skip_feat = self.encoder(x)
         # for i in range(len(skip_feat)):
         #     print(skip_feat[i].shape)
-        # skip_feat[5] = self.AttentionGraphCondKernel(skip_feat[2],skip_feat[3],skip_feat[4],skip_feat[5],rank)
+        skip_feat[5] = self.AttentionGraphCondKernel(skip_feat[2],skip_feat[3],skip_feat[4],skip_feat[5],rank)
         return self.decoder(skip_feat, focal)
