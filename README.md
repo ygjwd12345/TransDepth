@@ -3,6 +3,16 @@ Guanglei Yang, [Hao Tang](http://disi.unitn.it/~hao.tang/), Mingli Ding, [Nicu S
 ICCV 2021 <br>
 Apply Transformer into depth predciton and surface normal estimation.
 
+## Citation
+```
+@article{yang2021transformers,
+  title={Transformer-Based Attention Networks for Continuous Pixel-Wise Prediction},
+  author={Yang, Guanglei and Tang, Hao and Ding, Mingli and Sebe, Nicu and Ricci, Elisa},
+  journal={ICCV},
+  year={2021}
+}
+```
+
 ## Prepare pretrain model
 we choose R50-ViT-B_16 as our encoder.
 ```bash root transformerdepth
