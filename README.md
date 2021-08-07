@@ -5,10 +5,10 @@ Apply Transformer into depth predciton and surface normal estimation.
 
 ## Citation
 ```
-@article{yang2021transformers,
+@inproceedings{yang2021transformers,
   title={Transformer-Based Attention Networks for Continuous Pixel-Wise Prediction},
   author={Yang, Guanglei and Tang, Hao and Ding, Mingli and Sebe, Nicu and Ricci, Elisa},
-  journal={ICCV},
+  booktitle={ICCV},
   year={2021}
 }
 ```
