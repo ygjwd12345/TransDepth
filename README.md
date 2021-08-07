@@ -14,7 +14,7 @@ Apply Transformer into depth predciton and surface normal estimation.
 ```
 
 ## Prepare pretrain model
-we choose R50-ViT-B_16 as our encoder.
+We choose R50-ViT-B_16 as our encoder.
 ```bash root transformerdepth
 wget https://storage.googleapis.com/vit_models/imagenet21k/R50+ViT-B_16.npz 
 mkdir ./model/vit_checkpoint/imagenet21k 
@@ -29,7 +29,7 @@ python utils/download_from_gdrive.py 1AysroWpfISmm-yRFGBgFTrLy6FjQwvwP pytorch/d
 cd pytorch/dataset/nyu_depth_v2
 unzip sync.zip
 ```
-### prepare kitti
+### Prepare kitti
 ```bash
 cd dataset
 mkdir kitti_dataset
@@ -86,14 +86,17 @@ sh scripts/download_TransDepth_model.sh nyu_surfacenormal
 Note: Please try to execute the command line a second time, if it doesn’t work the first time.
 
 
-# Reference
+## Reference
 [BTS](https://github.com/cogaplex-bts/bts)
 
 [ViT](https://github.com/jeonsworld/ViT-pytorch)
 
 [TransUNet](https://github.com/Beckschen/TransUNet)
 
-
 [Do‘s code](https://github.com/MARSLab-UMN/TiltedImageSurfaceNormal)
-# Visualization result share
+
+## Visualization result share
 We provide all vis result of all tasks. [link](https://www.dropbox.com/sh/iv4zb4fl3vn294i/AACGjH0jIPtyZ8qwr_erLKr9a?dl=0)
+
+## Collaborations
+We are always interested in meeting new people and hearing about potential collaborations. If you'd like to work together or get in contact with us, please email bjdxtanghao@gmail.com.
