@@ -29,6 +29,13 @@ python utils/download_from_gdrive.py 1AysroWpfISmm-yRFGBgFTrLy6FjQwvwP pytorch/d
 cd pytorch/dataset/nyu_depth_v2
 unzip sync.zip
 ```
+test set
+```bash
+cd ./utils
+wget http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat
+python extract_official_train_test_set_from_mat.py nyu_depth_v2_labeled.mat splits.mat ../pytorch/dataset/nyu_depth_v2/official_splits/
+
+```
 ### Prepare kitti
 ```bash
 cd dataset
