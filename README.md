@@ -63,7 +63,7 @@ pip install -r requirement.txt
 ```
 
 ## Run
-*Before running, please make models fold first!!!*
+**Before running, please make models fold first!!!**
 
 Train
 ```bash
