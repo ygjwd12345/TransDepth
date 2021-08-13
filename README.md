@@ -63,6 +63,8 @@ pip install -r requirement.txt
 ```
 
 ## Run
+*Before running, please make models fold first!!!*
+
 Train
 ```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3 python bts_main.py arguments_train_nyu.txt
