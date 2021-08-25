@@ -570,6 +570,7 @@ def main():
 
     model_filename = args.model_name + '.py'
     args.model_name=args.model_name + '_rank_'+str(args.att_rank)
+    os.system('mkdir ' + args.log_directory)
     command = 'mkdir ' + args.log_directory + '/' + args.model_name
     os.system(command)
 
