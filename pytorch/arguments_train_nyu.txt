@@ -5,7 +5,7 @@
 --data_path ./dataset/nyu_depth_v2/sync/
 --gt_path ./dataset/nyu_depth_v2/sync/
 --filenames_file ../train_test_inputs/nyudepthv2_train_files_with_gt.txt
---batch_size 16
+--batch_size 8
 --num_epochs 50
 --learning_rate 1e-4
 --weight_decay 1e-2
