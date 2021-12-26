@@ -59,7 +59,7 @@ rm data_depth_annotated.zip
 ```
 ## Environment 
 ```bash
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 ## Run
