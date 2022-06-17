@@ -381,7 +381,9 @@ def main_worker(gpu, ngpus_per_node, args):
 
     # Training parameters
     optimizer = torch.optim.AdamW([{'params': model.module.encoder.parameters(), 'weight_decay': args.weight_decay},
-                                   {'params': model.module.decoder.parameters(), 'weight_decay': 0}],
+                                   {'params': model.module.decoder.parameters(), 'weight_decay': 0},
+                                   {'params': model.module.AttentionGraphCondKernel.parameters(), 'weight_decay': 0},
+                                   ],
                                   lr=args.learning_rate, eps=args.adam_eps)
 
     model_just_loaded = False
